@@ -1,0 +1,23 @@
+{
+  "name": "node-dao",
+  "version": "0.1.0",
+  "description": "Testing DAO on ES6",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "flow": "./node_modules/.bin/flow; test $? -eq 0 -o $? -eq 2"
+  },
+  "keywords": [
+    "dao"
+  ],
+  "author": "@ajvsms",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^6.0.4",
+    "babel-plugin-transform-flow-strip-types": "^6.8.0",
+    "eslint": "^2.11.1",
+    "eslint-plugin-flowtype": "^2.2.7",
+    "flow-bin": "^0.26.0",
+    "mocha": "^2.5.3"
+  }
+}
