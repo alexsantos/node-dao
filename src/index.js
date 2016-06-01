@@ -1,8 +1,6 @@
 // @flow
 'use strict';
 
-
-
 // Interface that all CustomerDAOs must support
 // interface ICustomerDAO {
 //   x: number;

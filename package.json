@@ -2,7 +2,7 @@
   "name": "node-dao",
   "version": "0.1.0",
   "description": "Testing DAO on ES6",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "mocha",
     "flow": "./node_modules/.bin/flow; test $? -eq 0 -o $? -eq 2"
