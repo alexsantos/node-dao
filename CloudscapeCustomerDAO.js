@@ -2,23 +2,10 @@
 
 'use strict';
 
-const Costumer = require('./Customer');
+const Customer = require('./Customer');
+const CustomerDAO = require('./CustomerDAO');
 
-// Interface that all CustomerDAOs must support
-interface ICustomerDAO {
-  insertCustomer(x: number): number;
-  deleteCustomer(): boolean;
-  findCustomer(): ?Object;
-  updateCustomer(): boolean;
-}
-
-
-
-const CloudscapeCustomerDAO = class CloudscapeCustomerDAO {
-  constructor() {
-    // initialization
-    console.log('CloudscapeCustomerDAO initialized');
-  }
+module.exports = class CloudscapeCustomerDAO extends CustomerDAO {
 
   // The following methods can use
   // CloudscapeDAOFactory.createConnection()
@@ -28,7 +15,7 @@ const CloudscapeCustomerDAO = class CloudscapeCustomerDAO {
     // Implement insert customer here.
     // Return newly created customer number
     // or a -1 on error
-    let customer = new Costumer('1', 'Sesame Street', 'LA');
+    let customer = new Customer('1', 'Sesame Street', 'LA');
     return customer.getCustomerNumber();
   }
 
@@ -55,5 +42,3 @@ const CloudscapeCustomerDAO = class CloudscapeCustomerDAO {
   }
 
 };
-
-module.exports = CloudscapeCustomerDAO;

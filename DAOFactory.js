@@ -5,21 +5,27 @@ const CloudscapeDAOFactory = require('./CloudscapeDAOFactory');
 const OracleDAOFactory = require('./CloudscapeDAOFactory');
 const SybaseDAOFactory = require('./CloudscapeDAOFactory');
 
-class DAOFactory {
+type DatabaseT = 1 | 2 | 3 | 4;
 
-  static get CLOUDSCAPE(): number {
+module.exports = class DAOFactory {
+
+  static get CLOUDSCAPE(): 1 {
     return 1;
   }
 
-  static get ORACLE(): number {
+  static get ORACLE(): 2 {
     return 2;
   }
 
-  static get SYBASE(): number {
+  static get SYBASE(): 3 {
     return 3;
   }
 
-  static getDAOFactory(whichFactory: number) { // : CloudscapeDAOFactory|OracleDAOFactory|SybaseDAOFactory|null {
+  static get MONGO(): 4 {
+    return 4;
+  }
+
+  static getDAOFactory(whichFactory: DatabaseT) { // : CloudscapeDAOFactory|OracleDAOFactory|SybaseDAOFactory|null {
     switch (whichFactory) {
       case 1:
         return new CloudscapeDAOFactory();
@@ -31,6 +37,4 @@ class DAOFactory {
         return {};
     }
   }
-}
-
-module.exports = DAOFactory;
+};

@@ -2,7 +2,7 @@
 
 'use strict';
 
-class Customer {
+module.exports = class Customer {
   // member variables
   _customerNumber: number;
   _name: string;
@@ -23,6 +23,4 @@ class Customer {
   getName() {
     return this._name;
   }
-}
-
-module.exports = Customer;
+};

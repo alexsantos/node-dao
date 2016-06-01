@@ -7,11 +7,9 @@ const CloudscapeAccountDAO = require('./CloudscapeAccountDAO');
 const CloudscapeOrderDAO = require('./CloudscapeOrderDAO');
 
 module.exports = class CloudscapeDAOFactory {
-  constructor() {
-    console.log('Instanciado');
-  }
+
   static get DRIVER() {
-    return 'COM.cloudscape.core.RmiJdbcDriver';
+    return 'com.cloudscape.core.RmiJdbcDriver';
   }
   static get DBURL() {
     return 'jdbc:cloudscape:rmi://localhost:1099/CoreJ2EEDB';
